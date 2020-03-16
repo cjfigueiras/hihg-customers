@@ -20,13 +20,8 @@ export class UserService {
         private readonly emailService: EmailService,
     ) { }
 
-    create(userDto: CreateUserDto, reqUser: User): Promise<User> {
+    create(userDto: CreateUserDto): Promise<User> {
         return new Promise((resolve: (result: User) => void, reject: (reason: ErrorResult) => void): void => {
-            // User request not Super Admin trying of create an user Super Admin
-            if (reqUser && reqUser.role !== UserRole.ROOT && userDto.role === UserRole.ROOT) {
-                reject(new UnauthorizedResult(ErrorCode.MissingPermission, 'You can not create a Super Admin User'));
-                return;
-            }
             this.userRepository.getUserByEmail(userDto.email).then((user: User) => {
                 if (user) {
                     reject(new BadRequestResult(ErrorCode.DuplicateEntity, 'There is a user with same email!'));

@@ -22,6 +22,7 @@ import { ErrorManager } from '../../common/error-manager/error-manager';
 import { User } from './user.entity';
 import { GetUser } from '../../common/decorator/user.decorator';
 import { JwtAuthGuard } from '../../common/auth/guards/auth.guard';
+import { Public } from '../../common/decorator/public.decorator';
 
 @Controller('users')
 @UseGuards(JwtAuthGuard, RolesGuard)
@@ -30,10 +31,11 @@ export class UserController {
 
     constructor(private readonly userService: UserService) { }
 
+    @Public()
     @Post()
     @UsePipes(new ValidationPipe())
-    create(@GetUser() user: User, @Body() userDto: CreateUserDto) {
-        return this.userService.create(userDto, user)
+    create(@Body() userDto: CreateUserDto) {
+        return this.userService.create(userDto)
             .then((createdUser: User) => {
                 return createdUser;
             })

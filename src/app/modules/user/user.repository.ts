@@ -14,7 +14,7 @@ export class UserRepository extends Repository<User> {
         user.email = userDto.email;
         const salt: string = bcrypt.genSaltSync(10);
         user.password = await bcrypt.hash(userDto.password, salt);
-        user.role = UserRole[String(userDto.role).toUpperCase()];
+        user.role = UserRole.CUSTOMER;
         user.phone = userDto.phone;
         user.updatedAt = new Date();
         user.createdAt = new Date();

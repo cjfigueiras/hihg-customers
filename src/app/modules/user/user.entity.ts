@@ -4,6 +4,7 @@ import { Exclude, Expose } from 'class-transformer';
 import { BaseEntity } from '../../common/database/base-entity';
 export enum UserRole {
     ROOT = 'root',
+    CUSTOMER = 'customer',
 }
 
 @Entity()

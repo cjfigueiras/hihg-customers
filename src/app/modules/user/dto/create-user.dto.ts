@@ -25,29 +25,7 @@ export class CreateUserDto {
     password?: string;
 
     @IsString()
-    @ValidateIf(user => user.role === 'adviser')
     readonly phone?: string;
-
-    @IsIn(['root', 'adviser', 'admin_unit', 'admin_branch', 'admin_group', 'admin_cosme'], {
-        message: 'Invalid role value, should be root, adviser, admin_unit, admin_branch, admin_group or admin_cosme',
-    })
-    readonly role: string;
-
-    @IsUUID()
-    @ValidateIf(user => user.role === 'adviser' || user.role === 'admin_unit')
-    unitId?: string;
-
-    @IsUUID()
-    @ValidateIf(user => user.role === 'admin_branch')
-    branchId?: string;
-
-    @IsUUID()
-    @ValidateIf(user => user.role === 'admin_group')
-    groupId?: string;
-
-    @IsUUID()
-    @ValidateIf(user => user.role === 'admin_cosme')
-    cosmeId?: string;
 
     @IsString()
     readonly replyUrl: string;
