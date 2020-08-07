@@ -42,7 +42,7 @@
     "@nestjs/websockets": "^6.0.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
-    "class-transformer": "^0.2.0",
+    "class-transformer": "^0.3.1",
     "class-validator": "^0.9.1",
     "custom-env": "^1.0.0",
     "dotenv": "^7.0.0",
