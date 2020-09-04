@@ -49,7 +49,7 @@
     "generate-password": "^1.5.0",
     "joi": "^14.3.1",
     "nestjs-cron": "^1.1.2",
-    "papaparse": "^5.1.0",
+    "papaparse": "^5.2.0",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "pg": "^7.9.0",
