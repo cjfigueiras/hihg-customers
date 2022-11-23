@@ -37,7 +37,7 @@
     "@nestjs/microservices": "6.0.2",
     "@nestjs/passport": "^6.0.0",
     "@nestjs/platform-express": "6.8.2",
-    "@nestjs/platform-socket.io": "^6.11.7",
+    "@nestjs/platform-socket.io": "^9.2.0",
     "@nestjs/typeorm": "^6.2.0",
     "@nestjs/websockets": "^6.0.2",
     "bcryptjs": "^2.4.3",
